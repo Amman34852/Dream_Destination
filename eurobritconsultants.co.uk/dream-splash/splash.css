@@ -1,0 +1,25 @@
+/* Dream Destinations splash screen */
+#dream-splash{position:fixed;inset:0;z-index:2147483647;display:flex;align-items:center;justify-content:center;
+background:linear-gradient(180deg,#FFFFFF 0%,#FFF2C4 100%);font-family:"Poppins","Segoe UI",Arial,sans-serif;
+animation:dsOut .7s ease 3.2s forwards}
+#dream-splash .ds-inner{display:flex;flex-direction:column;align-items:center;text-align:center;padding:24px}
+#dream-splash .ds-logo{position:relative;width:min(210px,52vw);aspect-ratio:352/338}
+#dream-splash .ds-logo img{position:absolute;inset:0;width:100%;height:100%;display:block;max-width:none}
+#dream-splash .ds-arcs{clip-path:inset(100% 0 0 0);animation:dsSweep 1.2s cubic-bezier(.65,0,.35,1) .25s forwards}
+#dream-splash .ds-plane{opacity:0;transform:translate(-46%,58%) rotate(-14deg) scale(.45);
+animation:dsFly 1.1s cubic-bezier(.2,.8,.25,1.1) 1s forwards,dsFloat 2.6s ease-in-out 2.1s infinite}
+#dream-splash .ds-name{margin:22px 0 4px;font-weight:700;font-size:clamp(28px,7vw,50px);line-height:1.1;letter-spacing:.5px;color:#2D3134;white-space:nowrap}
+#dream-splash .ds-name span{display:inline-block;opacity:0;transform:translateY(18px);animation:dsLetter .55s cubic-bezier(.2,.8,.3,1) forwards;animation-delay:calc(1.5s + var(--i)*.045s)}
+#dream-splash .ds-name .ds-gap{width:.28em}
+#dream-splash .ds-name .ds-accent{color:#F5735A;font-style:normal}
+#dream-splash .ds-tag{margin:0;font-size:clamp(13px,3.2vw,18px);letter-spacing:3px;text-transform:uppercase;color:#2D3134;opacity:0;animation:dsFade .8s ease 2.35s forwards}
+#dream-splash .ds-bar{margin-top:26px;width:min(190px,48vw);height:3px;border-radius:3px;background:rgba(45,49,52,.12);overflow:hidden}
+#dream-splash .ds-bar i{display:block;height:100%;width:100%;background:#F5735A;transform:scaleX(0);transform-origin:left;animation:dsBar 3s linear .2s forwards}
+@keyframes dsSweep{to{clip-path:inset(0 0 0 0)}}
+@keyframes dsFly{60%{opacity:1}to{opacity:1;transform:translate(0,0) rotate(0) scale(1)}}
+@keyframes dsFloat{0%,100%{translate:0 0}50%{translate:4px -5px}}
+@keyframes dsLetter{to{opacity:1;transform:none}}
+@keyframes dsFade{to{opacity:.75}}
+@keyframes dsBar{to{transform:scaleX(1)}}
+@keyframes dsOut{to{opacity:0;visibility:hidden;transform:scale(1.04)}}
+@media (prefers-reduced-motion:reduce){#dream-splash .ds-plane{animation:dsFly .01s forwards}#dream-splash .ds-arcs{animation:dsSweep .01s forwards}}
