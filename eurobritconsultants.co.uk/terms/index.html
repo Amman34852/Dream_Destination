@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html lang="en-US">
 
-<!-- Mirrored from eurobritconsultants.co.uk/terms/ by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 08 Oct 2026 01:07:33 GMT -->
-<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
 <head>
 	<meta charset="UTF-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -120,7 +119,60 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 <link rel="icon" href="../wp-content/uploads/2026/05/cropped-WhatsApp-Image-2026-05-14-at-12.04.22-192x192.jpg" sizes="192x192" />
 <link rel="apple-touch-icon" href="../wp-content/uploads/2026/05/cropped-WhatsApp-Image-2026-05-14-at-12.04.22-180x180.jpg" />
 <meta name="msapplication-TileImage" content="../wp-content/uploads/2026/05/cropped-WhatsApp-Image-2026-05-14-at-12.04.22-270x270.jpg" />
-<style id="jeg_dynamic_css" type="text/css" data-type="jeg_custom-css"></style><link rel="stylesheet" href="../dream-splash/splash.css"></head>
+<style id="jeg_dynamic_css" type="text/css" data-type="jeg_custom-css"></style><link rel="stylesheet" href="../dream-splash/splash.css"><script id="mobile-menu-fix">
+(function(){
+  function setState(t,open){
+    var dd=t.parentNode.querySelector('.elementor-nav-menu--dropdown');
+    t.classList.toggle('elementor-active',open);
+    t.setAttribute('aria-expanded',open?'true':'false');
+    if(!dd) return;
+    dd.setAttribute('aria-hidden',open?'false':'true');
+    dd.querySelectorAll('a').forEach(function(a){a.setAttribute('tabindex',open?'0':'-1');});
+    if(open){
+      dd.style.setProperty('--menu-height',dd.scrollHeight+'px');
+      dd.style.maxHeight=dd.scrollHeight+'px';
+      dd.style.transform='scaleY(1)';
+      var op=dd.offsetParent||document.body;
+      dd.style.left=(-op.getBoundingClientRect().left)+'px';
+      dd.style.width=document.documentElement.clientWidth+'px';
+    }else{
+      dd.style.maxHeight='0px';
+      dd.style.transform='scaleY(0)';
+    }
+  }
+  function toggle(e){
+    var t=e.target.closest&&e.target.closest('.elementor-menu-toggle');
+    if(!t) return;
+    e.preventDefault();
+    e.stopImmediatePropagation();
+    setState(t,!t.classList.contains('elementor-active'));
+  }
+  document.addEventListener('click',toggle,true);
+  document.addEventListener('keydown',function(e){
+    if(e.key==='Enter'||e.key===' '){toggle(e);}
+  },true);
+  window.addEventListener('resize',function(){
+    document.querySelectorAll('.elementor-menu-toggle.elementor-active').forEach(function(t){setState(t,true);});
+  });
+})();
+</script>
+<script id="header-fit-fix">
+(function(){
+  function fit(){
+    var h=document.getElementById('masthead');
+    if(!h||!document.body) return;
+    var cs=getComputedStyle(document.body);
+    h.style.marginTop=(-(parseFloat(cs.paddingTop)||0))+'px';
+    h.style.marginLeft=(-(parseFloat(cs.paddingLeft)||0))+'px';
+    h.style.marginRight=(-(parseFloat(cs.paddingRight)||0))+'px';
+  }
+  document.addEventListener('DOMContentLoaded',fit);
+  window.addEventListener('load',fit);
+  window.addEventListener('resize',fit);
+  setTimeout(fit,300);setTimeout(fit,1500);
+})();
+</script>
+</head>
 
 <body class="wp-singular page-template page-template-elementor_header_footer page page-id-325 wp-embed-responsive wp-theme-hello-elementor ehf-header ehf-footer ehf-template-hello-elementor ehf-stylesheet-hello-elementor jkit-color-scheme hello-elementor-default elementor-default elementor-template-full-width elementor-kit-8 elementor-page elementor-page-325"><div id="dream-splash" role="presentation"><div class="ds-inner"><div class="ds-logo"><img class="ds-arcs" src="../dream-splash/arcs.png" alt=""><img class="ds-plane" src="../dream-splash/plane.png" alt=""></div><div class="ds-name" aria-label="Dream Destinations"><span style="--i:0">D</span><span style="--i:1">r</span><span style="--i:2">e</span><span style="--i:3">a</span><span style="--i:4">m</span><span class="ds-gap" style="--i:5">&nbsp;</span><em class="ds-accent"><span style="--i:6">D</span><span style="--i:7">e</span><span style="--i:8">s</span><span style="--i:9">t</span><span style="--i:10">i</span><span style="--i:11">n</span><span style="--i:12">a</span><span style="--i:13">t</span><span style="--i:14">i</span><span style="--i:15">o</span><span style="--i:16">n</span><span style="--i:17">s</span></em></div><p class="ds-tag">Make Your Dreams True</p><div class="ds-bar"><i></i></div></div></div><script>(function(){var d=document.getElementById("dream-splash");if(!d)return;var h=d.getAttribute("data-home")==="1",s=false;try{s=sessionStorage.getItem("dreamSplash")==="1"}catch(e){}if(s&&!h){d.parentNode.removeChild(d);return}try{sessionStorage.setItem("dreamSplash","1")}catch(e){}setTimeout(function(){if(d.parentNode)d.parentNode.removeChild(d)},4100)})();</script>
 	<style id="hfe-skip-link-style">
@@ -687,7 +739,6 @@ body{
 
 </body>
 
-<!-- Mirrored from eurobritconsultants.co.uk/terms/ by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 08 Oct 2026 01:07:35 GMT -->
 </html>				</div>
 					</div>
 				</div>

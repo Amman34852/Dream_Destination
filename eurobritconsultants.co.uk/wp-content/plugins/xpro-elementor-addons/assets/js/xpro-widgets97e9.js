@@ -1,3 +1,69 @@
+/* Static GitHub Pages mobile navbar fallback. Kept dependency-free so it works even when Elementor Pro JS is unavailable. */
+(function () {
+    function bindMobileMenus() {
+        document.querySelectorAll('.elementor-menu-toggle').forEach(function (toggle) {
+            if (toggle.dataset.staticMobileNavBound === '1') return;
+
+            var widget = toggle.closest('.elementor-nav-menu--toggle');
+            var dropdown = toggle.nextElementSibling;
+            if (!dropdown || !dropdown.classList.contains('elementor-nav-menu--dropdown')) {
+                dropdown = widget ? widget.querySelector('.elementor-nav-menu--dropdown') : null;
+            }
+            if (!dropdown) return;
+
+            toggle.dataset.staticMobileNavBound = '1';
+
+            function setState(open) {
+                toggle.classList.toggle('elementor-active', open);
+                toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+                dropdown.setAttribute('aria-hidden', open ? 'false' : 'true');
+
+                if (open) {
+                    dropdown.style.setProperty('--menu-height', Math.max(dropdown.scrollHeight, 1) + 'px');
+                    dropdown.style.setProperty('max-height', Math.max(dropdown.scrollHeight, 1) + 'px');
+                    dropdown.style.setProperty('transform', 'scaleY(1)');
+                    dropdown.style.setProperty('overflow-y', 'auto');
+                } else {
+                    dropdown.style.removeProperty('max-height');
+                    dropdown.style.removeProperty('transform');
+                    dropdown.style.removeProperty('overflow-y');
+                }
+
+                dropdown.querySelectorAll('a').forEach(function (link) {
+                    if (open) link.removeAttribute('tabindex');
+                    else link.setAttribute('tabindex', '-1');
+                });
+            }
+
+            toggle.addEventListener('click', function (event) {
+                event.preventDefault();
+                event.stopPropagation();
+                setState(!toggle.classList.contains('elementor-active'));
+            }, true);
+
+            toggle.addEventListener('keydown', function (event) {
+                if (event.key === 'Enter' || event.key === ' ') {
+                    event.preventDefault();
+                    event.stopPropagation();
+                    setState(!toggle.classList.contains('elementor-active'));
+                }
+            }, true);
+
+            dropdown.addEventListener('click', function (event) {
+                if (event.target.closest('a')) setState(false);
+            });
+
+            setState(false);
+        });
+    }
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', bindMobileMenus);
+    } else {
+        bindMobileMenus();
+    }
+})();
+
 !(function (e) {
     "use strict";
     let t = {
