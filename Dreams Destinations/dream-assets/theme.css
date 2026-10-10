@@ -1,0 +1,31 @@
+/* Dreams Destinations theme: logo green + blue on white, dark ink footer */
+:root{--dd-green:#75CC09;--dd-green-deep:#3F8C00;--dd-blue:#07B3DA;--dd-blue-deep:#0579A0;--dd-ink:#2D3134;
+--e-global-color-primary:#3F8C00;--e-global-color-accent:#3F8C00;--e-global-color-secondary:#0579A0}
+html,body{overflow-x:hidden}
+.hfe-site-logo-img{width:auto!important;max-width:100%!important;height:auto!important;max-height:58px;object-fit:contain}
+.hfe-site-logo-container,.hfe-site-logo{display:flex;align-items:center}
+a:hover{color:var(--dd-blue-deep)}
+/* bright logo green on dark surfaces (hero, reviews, footer) for contrast */
+.elementor-element-afacbc0 .elementor-heading-title,.elementor-element-afacbc0 .elementor-button-text{--c:var(--dd-green)}
+.elementor-element-82bcf07 .elementor-heading-title{color:var(--dd-green)!important}
+.elementor-element-b291566 .elementor-button{color:var(--dd-green)!important;border-color:var(--dd-green)!important}
+.elementor-element-b291566 .elementor-button-text{color:var(--dd-green)!important}
+.reviews-section [style],.reviews-section h2,.reviews-section strong,.reviews-section .review-service b{color:var(--dd-green)}
+.reviews-section .review-card{border-top-color:var(--dd-green)!important}
+.reviews-section .swiper-pagination-bullet-active{background:var(--dd-green)!important}
+.elementor-location-footer h2,.elementor-location-footer h3,.elementor-location-footer h4,footer h2,footer h3,footer h4{color:#fff}
+footer a:hover,.elementor-location-footer a:hover{color:var(--dd-green)!important}
+/* larger header logo */
+.elementor-element-7e70b2f{width:auto!important;min-width:200px}
+.elementor-element-7e70b2f .hfe-site-logo-img{max-height:64px}
+.elementor-element-a6d7d3c .hfe-site-logo-img,.elementor-element-df3b4ad .hfe-site-logo-img{max-height:48px}
+/* footer brand: full logo replaces icon + text */
+.elementor-element-eb9c93c img{width:230px!important;max-width:100%;height:auto!important}
+.elementor-element-eee05bf{display:none}
+.elementor-location-footer .elementor-heading-title,footer .elementor-heading-title{color:var(--dd-green)}
+.elementor-element-290c598 *{--dd-on-dark:1}
+.elementor-element-290c598 .elementor-heading-title{color:#fff!important}
+.elementor-220 .elementor-element.elementor-element-eb9c93c{width:240px!important;max-width:100%!important;--container-widget-width:240px}
+.elementor-element-84a8b2f .elementor-heading-title{color:var(--dd-green)!important}
+/* top bar sits on dark ink: brighter icon colour */
+.elementor-173 .elementor-icon-list-icon i,.elementor-173 .elementor-icon-list-icon svg{color:#75CC09!important;fill:#75CC09!important}
