@@ -1,20 +1,22 @@
-/* Dreams Destinations theme: logo green + blue on white, dark ink footer */
-:root{--dd-green:#75CC09;--dd-green-deep:#3F8C00;--dd-blue:#07B3DA;--dd-blue-deep:#0579A0;--dd-ink:#2D3134;
---e-global-color-primary:#3F8C00;--e-global-color-accent:#3F8C00;--e-global-color-secondary:#0579A0}
+@import url("https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&family=Roboto:wght@400;500;700&display=swap");
+/* Dream Destinations theme (from the reference site): cream header + footer, coral accents there;
+   content uses blue headings (#6EC1E4) and green buttons (#61CE70), the logo blue/green. Fonts: Barlow + Roboto. */
+:root{--dd-coral:#F5735A;--dd-blue:#6EC1E4;--dd-green:#61CE70;--dd-ink:#2D3134;--dd-cream:#FBF0C9;--dd-cream-soft:#FFF2C4;
+--e-global-color-primary:#6EC1E4;--e-global-color-accent:#61CE70}
 html,body{overflow-x:hidden}
 .hfe-site-logo-img{width:auto!important;max-width:100%!important;height:auto!important;max-height:58px;object-fit:contain}
 .hfe-site-logo-container,.hfe-site-logo{display:flex;align-items:center}
-a:hover{color:var(--dd-blue-deep)}
-/* bright logo green on dark surfaces (hero, reviews, footer) for contrast */
+a:hover{color:var(--dd-blue)}
+/* hero (dark): blue heading line + green outlined button */
 .elementor-element-afacbc0 .elementor-heading-title,.elementor-element-afacbc0 .elementor-button-text{--c:var(--dd-green)}
-.elementor-element-82bcf07 .elementor-heading-title{color:var(--dd-green)!important}
+.elementor-element-82bcf07 .elementor-heading-title{color:var(--dd-blue)!important}
 .elementor-element-b291566 .elementor-button{color:var(--dd-green)!important;border-color:var(--dd-green)!important}
 .elementor-element-b291566 .elementor-button-text{color:var(--dd-green)!important}
-.reviews-section [style],.reviews-section h2,.reviews-section strong,.reviews-section .review-service b{color:var(--dd-green)}
+/* reviews (dark): blue heading, green accents */
+.reviews-section [style],.reviews-section strong,.reviews-section .review-service b{color:var(--dd-green)}
+.reviews-section h2{color:var(--dd-blue)}
 .reviews-section .review-card{border-top-color:var(--dd-green)!important}
 .reviews-section .swiper-pagination-bullet-active{background:var(--dd-green)!important}
-.elementor-location-footer h2,.elementor-location-footer h3,.elementor-location-footer h4,footer h2,footer h3,footer h4{color:#fff}
-footer a:hover,.elementor-location-footer a:hover{color:var(--dd-green)!important}
 /* larger header logo */
 .elementor-element-7e70b2f{width:auto!important;min-width:200px}
 .elementor-element-7e70b2f .hfe-site-logo-img{max-height:64px}
@@ -22,10 +24,30 @@ footer a:hover,.elementor-location-footer a:hover{color:var(--dd-green)!importan
 /* footer brand: full logo replaces icon + text */
 .elementor-element-eb9c93c img{width:230px!important;max-width:100%;height:auto!important}
 .elementor-element-eee05bf{display:none}
-.elementor-location-footer .elementor-heading-title,footer .elementor-heading-title{color:var(--dd-green)}
-.elementor-element-290c598 *{--dd-on-dark:1}
-.elementor-element-290c598 .elementor-heading-title{color:#fff!important}
 .elementor-220 .elementor-element.elementor-element-eb9c93c{width:240px!important;max-width:100%!important;--container-widget-width:240px}
-.elementor-element-84a8b2f .elementor-heading-title{color:var(--dd-green)!important}
-/* top bar sits on dark ink: brighter icon colour */
-.elementor-173 .elementor-icon-list-icon i,.elementor-173 .elementor-icon-list-icon svg{color:#75CC09!important;fill:#75CC09!important}
+
+/* ===== HEADER: cream like the reference (#F5DD87 @ 45% over white) ===== */
+.elementor-173 .elementor-element.e-con{background-color:var(--dd-cream)!important}
+.elementor-173 .elementor-icon-list-icon i,.elementor-173 .elementor-icon-list-icon svg{color:var(--dd-coral)!important;fill:var(--dd-coral)!important}
+.elementor-173 .elementor-icon-list-text{color:var(--dd-ink)!important}
+.elementor-173 .elementor-icon-list-item:hover .elementor-icon-list-text{color:var(--dd-coral)!important}
+.elementor-173 .elementor-element .elementor-nav-menu--main .elementor-item{color:var(--dd-ink);fill:var(--dd-ink)}
+.elementor-173 .elementor-nav-menu--dropdown{background-color:var(--dd-cream-soft)}
+.elementor-173 .elementor-nav-menu--dropdown a{color:var(--dd-ink)}
+.elementor-173 .elementor-nav-menu--dropdown a:hover,.elementor-173 .elementor-nav-menu--dropdown a.elementor-item-active{background-color:var(--dd-coral);color:#fff}
+.elementor-location-header a:hover{color:var(--dd-coral)}
+
+/* ===== FOOTER: white-to-cream gradient, black copyright bar, blue icons ===== */
+.elementor-220 .elementor-element.elementor-element-84a8b2f{background:linear-gradient(180deg,#FFFFFF 0%,var(--dd-cream) 100%)!important;border-top:1px solid var(--dd-ink)}
+.elementor-220 .elementor-element.elementor-element-290c598{background:var(--dd-cream)!important}
+.elementor-220 .elementor-element.elementor-element-04f9fc3{background-color:#000!important}
+.elementor-220 .elementor-heading-title{color:var(--dd-ink)!important}
+.elementor-220 .elementor-icon-list-text,.elementor-220 .elementor-widget-text-editor,.elementor-220 .elementor-widget-text-editor p{color:var(--dd-ink)!important}
+.elementor-220 .elementor-icon-list-icon i{color:var(--dd-blue)!important}
+.elementor-220 .elementor-icon-list-icon svg{fill:var(--dd-blue)!important}
+.elementor-220 .elementor-element-04f9fc3 .elementor-heading-title,.elementor-220 .elementor-element-04f9fc3 .elementor-widget-text-editor,.elementor-220 .elementor-element-04f9fc3 .elementor-widget-text-editor p,.elementor-220 .elementor-element-04f9fc3 .elementor-icon-list-text{color:#fff!important}
+.elementor-location-footer a:hover,footer a:hover{color:var(--dd-coral)!important}
+
+/* Barlow for menu, buttons and footer titles (same roles as the reference site); Roboto stays for body text */
+.elementor-nav-menu a,.hfe-nav-menu a,.hfe-nav-menu__toggle,.elementor-button,.elementor-button-text,.elementor-location-footer .elementor-heading-title,footer .elementor-heading-title{font-family:"Barlow","Roboto",sans-serif}
+.hfe-nav-menu a,.elementor-nav-menu a{font-weight:500}
