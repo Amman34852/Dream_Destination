@@ -867,3 +867,26 @@ select{
 *{
     max-width:100%;
 }/* End custom CSS */
+
+/* Keep the Home hero content clear of the globe */
+@media (min-width: 1025px) {
+  /* Left-side text, badges and buttons */
+  .elementor-12 .elementor-element.elementor-element-31d7741 {
+    --width: 47% !important;
+    --padding-left: 40px !important;
+    --padding-right: 24px !important;
+    min-width: 0;
+  }
+
+  /* Globe column — keep its existing size */
+  .elementor-12 .elementor-element.elementor-element-34ad6b0 {
+    --width: 50% !important;
+  }
+
+  /* Prevent benefit badges from overflowing */
+  .elementor-12 .elementor-element.elementor-element-ddba412 {
+    flex-wrap: wrap !important;
+    max-width: 100%;
+    gap: 12px;
+  }
+}
