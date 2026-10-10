@@ -830,128 +830,112 @@ ADD THIS AT THE BOTTOM
 
 
 
-<div class="scene">
+<style>
+/* ===== Elliptical orbit system (globe + tilted dotted ellipses + revolving flags) ===== */
+.dd-orbit{position:absolute;left:50%;top:50%;width:640px;height:640px;max-width:none;margin:-320px 0 0 -320px;pointer-events:none;}
+.dd-orbit svg.dd-orbit-paths{position:absolute;left:0;top:0;width:640px;height:640px;max-width:none;overflow:visible;z-index:1;pointer-events:none;}
+.dd-path{fill:none;stroke:#fff;stroke-width:3;stroke-linecap:round;stroke-dasharray:0.1 9;}
+.dd-path-outer{stroke-opacity:.5;}
+.dd-path-inner{stroke-opacity:.42;}
+.dd-globe{position:absolute;left:calc(50% - 115px);top:calc(50% - 115px);width:230px;height:230px;z-index:2;border-radius:50%;filter:drop-shadow(0 8px 22px rgba(0,0,0,.45));}
+.dd-globe img{display:block;width:100%;height:100%;object-fit:contain;border-radius:50%;}
+.dd-flag{z-index:3;pointer-events:auto;will-change:transform;}
+.dd-flag:hover{z-index:20;}
+.dd-flag-out{width:70px;height:70px;margin:-35px 0 0 -35px;}
+.dd-flag-in{width:52px;height:52px;margin:-26px 0 0 -26px;}
+@media (max-width:768px){
+  .dd-orbit{transform:scale(.82);}
+}
+@media(max-width:750px){
+  /* old circular dashed path is replaced by the elliptical dotted paths */
+  .scene.dd-live::after{display:none;}
+}
+</style>
+
+<div class="scene dd-live">
 
   <div class="glow"></div>
 
-  <!-- Two dashed orbit rings -->
-  <div class="outer-orbit"></div>
-  <div class="inner-orbit"></div>
+  <!-- Center globe + elliptical orbit paths + revolving country flags -->
+  <div class="dd-orbit" id="ddOrbit">
 
-  <!-- Colorful landmark ring -->
-  <div class="landmark-ring">
-    <!-- Using a travel landmarks SVG illustration via inline -->
-    <svg viewBox="0 0 250 250" xmlns="http://www.w3.org/2000/svg" width="250" height="250">
-      <!-- sky bg -->
-      <circle cx="125" cy="125" r="125" fill="#e8f4f8"/>
-      <!-- ground -->
-      <ellipse cx="125" cy="210" rx="110" ry="30" fill="#6EC1E4"/>
-      <!-- Eiffel Tower -->
-      <polygon points="115,80 135,80 140,160 110,160" fill="#2D3134"/>
-      <polygon points="118,80 132,80 125,55" fill="#2D3134"/>
-      <rect x="110" y="155" width="30" height="5" fill="#2D3134"/>
-      <rect x="112" y="120" width="26" height="4" fill="#2D3134"/>
-      <rect x="114" y="100" width="22" height="4" fill="#2D3134"/>
-      <!-- Big Ben -->
-      <rect x="55" y="110" width="28" height="60" fill="#B0BEC5"/>
-      <rect x="57" y="95" width="24" height="20" fill="#90A4AE"/>
-      <polygon points="57,95 81,95 69,78" fill="#78909C"/>
-      <circle cx="69" cy="105" r="7" fill="#fff" stroke="#2D3134" stroke-width="1.5"/>
-      <!-- Colosseum -->
-      <ellipse cx="185" cy="168" rx="28" ry="18" fill="#BCAAA4"/>
-      <ellipse cx="185" cy="162" rx="28" ry="18" fill="none" stroke="#8D6E63" stroke-width="3"/>
-      <rect x="157" y="148" width="56" height="20" rx="3" fill="#BCAAA4"/>
-      <line x1="168" y1="148" x2="168" y2="168" stroke="#8D6E63" stroke-width="2"/>
-      <line x1="179" y1="148" x2="179" y2="168" stroke="#8D6E63" stroke-width="2"/>
-      <line x1="191" y1="148" x2="191" y2="168" stroke="#8D6E63" stroke-width="2"/>
-      <line x1="202" y1="148" x2="202" y2="168" stroke="#8D6E63" stroke-width="2"/>
-      <!-- Taj Mahal -->
-      <rect x="95" y="155" width="60" height="30" fill="#FAFAFA"/>
-      <ellipse cx="125" cy="155" rx="18" ry="24" fill="#F5F5F5" stroke="#E0E0E0" stroke-width="1"/>
-      <rect x="88" y="160" width="16" height="25" rx="2" fill="#F5F5F5"/>
-      <rect x="146" y="160" width="16" height="25" rx="2" fill="#F5F5F5"/>
-      <!-- Airplane -->
-      <g transform="translate(30,75) rotate(-20)">
-        <ellipse cx="0" cy="0" rx="14" ry="4" fill="#6EC1E4"/>
-        <polygon points="-4,-4 6,-4 8,0 6,4 -4,4" fill="#6EC1E4"/>
-        <polygon points="-8,0 -14,-8 -10,-8 -6,0" fill="#6EC1E4"/>
-        <polygon points="-8,0 -14,8 -10,8 -6,0" fill="#6EC1E4"/>
-      </g>
-      <!-- Stars -->
-      <circle cx="200" cy="40" r="2" fill="#6EC1E4"/>
-      <circle cx="215" cy="55" r="1.5" fill="#6EC1E4"/>
-      <circle cx="30" cy="50" r="2" fill="#6EC1E4"/>
-      <circle cx="45" cy="35" r="1.5" fill="#6EC1E4"/>
+    <svg class="dd-orbit-paths" viewBox="-320 -320 640 640" aria-hidden="true" focusable="false">
+      <ellipse class="dd-path dd-path-outer" cx="0" cy="0" rx="285" ry="195" transform="rotate(-20)"/>
+      <ellipse class="dd-path dd-path-inner" cx="0" cy="0" rx="215" ry="150" transform="rotate(25)"/>
     </svg>
-  </div>
 
-  <!-- Center logo
-  <div class="center-circle">
-    <div class="center-inner">
-      <span class="lbl-easy">UK</span>
-      <span class="lbl-global">Dream</span>
-      <span class="lbl-visa">Destinations</span>
+    <div class="dd-globe">
+      <img src="wp-content/uploads/2026/05/Globe-orbit.png" alt="Earth Globe" width="640" height="640"/>
     </div>
-  </div> -->
-  
-<!-- Center Earth Globe -->
-<div class="center-circle">
-    <img
-        class="center-globe"
-        src="wp-content/uploads/2026/05/Globe-fit.jpg"
-        alt="Earth Globe"
-    />
-</div>
 
-  <!-- OUTER rotating flags (6 flags) -->
-  <div class="outer-flags">
-
-    <div class="flag-item of of-1">
+    <!-- OUTER orbit flags (6) -->
+    <div class="flag-item dd-flag dd-flag-out" data-orbit="outer" data-start="-90" style="transform:translate(-66.7px,-183.2px)">
       <img decoding="async" src="../flagcdn.com/w160/ca.png" alt="Canada"/>
       <span class="flag-label">Canada</span>
     </div>
 
-    <div class="flag-item of of-2">
+    <div class="flag-item dd-flag dd-flag-out" data-orbit="outer" data-start="-30" style="transform:translate(198.6px,-176.0px)">
       <img decoding="async" src="../flagcdn.com/w160/fr.png" alt="France"/>
       <span class="flag-label">France</span>
     </div>
 
-    <div class="flag-item of of-3">
+    <div class="flag-item dd-flag dd-flag-out" data-orbit="outer" data-start="30" style="transform:translate(265.3px,7.2px)">
       <img decoding="async" src="../flagcdn.com/w160/au.png" alt="Australia"/>
       <span class="flag-label">Australia</span>
     </div>
 
-    <div class="flag-item of of-4">
+    <div class="flag-item dd-flag dd-flag-out" data-orbit="outer" data-start="90" style="transform:translate(66.7px,183.2px)">
       <img decoding="async" src="../flagcdn.com/w160/us.png" alt="USA"/>
       <span class="flag-label">United States</span>
     </div>
 
-    <div class="flag-item of of-5">
+    <div class="flag-item dd-flag dd-flag-out" data-orbit="outer" data-start="150" style="transform:translate(-198.6px,176.0px)">
       <img decoding="async" src="../flagcdn.com/w160/de.png" alt="Germany"/>
       <span class="flag-label">Germany</span>
     </div>
 
-    <div class="flag-item of of-6">
+    <div class="flag-item dd-flag dd-flag-out" data-orbit="outer" data-start="210" style="transform:translate(-265.3px,-7.2px)">
       <img decoding="async" src="../flagcdn.com/w160/gb.png" alt="UK"/>
       <span class="flag-label">United Kingdom</span>
     </div>
 
-  </div>
-
-  <!-- INNER rotating flags (2 flags, opposite direction) -->
-  <div class="inner-flags">
-
-    <div class="flag-item if if-1">
+    <!-- INNER orbit flags (2, opposite direction) -->
+    <div class="flag-item dd-flag dd-flag-in" data-orbit="inner" data-start="-60" style="transform:translate(152.3px,-72.3px)">
       <img decoding="async" src="../flagcdn.com/w160/it.png" alt="Italy"/>
       <span class="flag-label">Italy</span>
     </div>
 
-    <div class="flag-item if if-2">
+    <div class="flag-item dd-flag dd-flag-in" data-orbit="inner" data-start="120" style="transform:translate(-152.3px,72.3px)">
       <img decoding="async" src="../flagcdn.com/w160/es.png" alt="Spain"/>
       <span class="flag-label">Spain</span>
     </div>
 
   </div>
+
+  <script>
+  (function(){
+    var root=document.getElementById('ddOrbit'); if(!root) return;
+    var ORB={
+      outer:{a:285,b:195,tilt:-20,period:20,dir:1},
+      inner:{a:215,b:150,tilt:25,period:14,dir:-1}
+    };
+    var flags=[].slice.call(root.querySelectorAll('.dd-flag')).map(function(el){
+      return {el:el,o:ORB[el.getAttribute('data-orbit')],t0:parseFloat(el.getAttribute('data-start'))*Math.PI/180};
+    });
+    var TAU=Math.PI*2, t0=null;
+    function frame(now){
+      if(t0===null) t0=now;
+      var sec=(now-t0)/1000;
+      for(var i=0;i<flags.length;i++){
+        var f=flags[i],o=f.o,th=f.t0+o.dir*TAU*sec/o.period,r=o.tilt*Math.PI/180;
+        var x=o.a*Math.cos(th),y=o.b*Math.sin(th);
+        f.el.style.transform='translate('+(x*Math.cos(r)-y*Math.sin(r)).toFixed(2)+'px,'+(x*Math.sin(r)+y*Math.cos(r)).toFixed(2)+'px)';
+      }
+      requestAnimationFrame(frame);
+    }
+    requestAnimationFrame(frame);
+  })();
+  </script>
 
 </div>
 
