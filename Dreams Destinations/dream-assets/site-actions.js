@@ -44,8 +44,7 @@
   /* ---------- 2. Contact page: Submit Request -> email / WhatsApp choice ---------- */
   function initContactSubmit() {
     var marker = document.querySelector('input[name="referer_title"][value="Contact"]');
-    if (!marker) return;
-    var form = marker.form;
+    var form = marker ? marker.form : document.querySelector("#get-in-touch form.elementor-form"); /* contact page form, or the home page Get In Touch form */
     if (!form) return;
 
     var overlay = document.createElement("div");
