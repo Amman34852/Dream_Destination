@@ -1,12 +1,13 @@
 /* Hero background slideshow: crossfades the 7 hero pictures every 5 seconds.
-   Used on Home, Services, About, Apply, Privacy Policy and Refund pages. */
+   Used on Home, Services, Whole Day Packages, About, Apply, Privacy Policy and Refund pages. */
 (function () {
   var script = document.currentScript;
   var base = script && script.src ? script.src.replace(/[^\/]*$/, '') + 'hero/' : 'dream-assets/hero/';
-  var IMAGES = [1, 2, 3, 4, 5, 6, 7].map(function (n) { return base + 'hero-' + n + '.jpeg'; });
+  /* Order: Tower Bridge (day), Big Ben, Buckingham Palace, Statue of Liberty, Tower Bridge (night), Pisa, Arc de Triomphe */
+  var IMAGES = [1, 3, 5, 2, 4, 6, 7].map(function (n) { return base + 'hero-' + n + '.jpeg'; });
   var INTERVAL = 5000;
   var SELECTORS = ['.elementor-element-afacbc0', '.elementor-element-03e0a92', '.elementor-element-e925a09',
-                   '.visa-hero', '.elementor-element-3d094e1', '.elementor-element-1acb0d40'];
+                   '.visa-hero', '.elementor-element-3d094e1', '.elementor-element-1acb0d40', '.fl-hero'];
 
   var css = '.dh-slides,.dh-shade{position:absolute;top:0;right:0;bottom:0;left:0;z-index:-1;pointer-events:none}' +
     '.dh-slide{filter:brightness(1.06) contrast(1.08) saturate(1.15);position:absolute;top:0;right:0;bottom:0;left:0;background-size:cover;background-position:center;background-repeat:no-repeat;opacity:0;transition:opacity 1s ease-in-out}' +

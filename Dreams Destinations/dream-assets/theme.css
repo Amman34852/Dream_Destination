@@ -9,9 +9,17 @@ html,body{overflow-x:hidden}
 a:hover{color:var(--dd-blue)}
 /* hero (dark): blue heading line + green outlined button */
 .elementor-element-afacbc0 .elementor-heading-title,.elementor-element-afacbc0 .elementor-button-text{--c:var(--dd-green)}
-.elementor-element-82bcf07 .elementor-heading-title{color:var(--dd-blue)!important}
-.elementor-element-b291566 .elementor-button{color:var(--dd-green)!important;border-color:var(--dd-green)!important}
-.elementor-element-b291566 .elementor-button-text{color:var(--dd-green)!important}
+.elementor-element-b291566 .elementor-button {
+    color: #a9fdbb !important;
+    border-color: #61CE70 !important;
+    background-color: #61CE7054 !important;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4) !important;
+}
+
+.elementor-element-b291566 .elementor-button-text {
+    color: #a9fdbb !important;
+}
+
 /* reviews (dark): blue heading, green accents */
 .reviews-section [style],.reviews-section strong,.reviews-section .review-service b{color:var(--dd-green)}
 .reviews-section h2{color:var(--dd-blue)}
@@ -36,6 +44,42 @@ a:hover{color:var(--dd-blue)}
 .elementor-173 .elementor-nav-menu--dropdown a{color:var(--dd-ink)}
 .elementor-173 .elementor-nav-menu--dropdown a:hover,.elementor-173 .elementor-nav-menu--dropdown a.elementor-item-active{background-color:var(--dd-coral);color:#fff}
 .elementor-location-header a:hover{color:var(--dd-coral)}
+
+/* Header social icons: original-style backgrounds */
+
+/* WhatsApp */
+.elementor-173 .elementor-element-f824846 .elementor-social-icon-whatsapp,
+.elementor-173 .elementor-element-e9b803f .elementor-social-icon-whatsapp {
+    background: #25D366 !important;
+}
+
+/* Instagram */
+.elementor-173 .elementor-element-f824846 .elementor-social-icon-instagram,
+.elementor-173 .elementor-element-e9b803f .elementor-social-icon-instagram {
+    background: linear-gradient(45deg, #FEDA75, #FA7E1E, #D62976, #962FBF, #4F5BD5) !important;
+}
+
+/* Facebook */
+.elementor-173 .elementor-element-f824846 .elementor-social-icon-facebook,
+.elementor-173 .elementor-element-e9b803f .elementor-social-icon-facebook {
+    background: #1877F2 !important;
+}
+
+/* Phone */
+.elementor-173 .elementor-element-f824846 .elementor-social-icon-phone,
+.elementor-173 .elementor-element-e9b803f .elementor-social-icon-phone {
+    background: #25D366 !important;
+}
+
+/* Keep all four icons white */
+.elementor-173 .elementor-element-f824846 .elementor-social-icon i,
+.elementor-173 .elementor-element-f824846 .elementor-social-icon svg,
+.elementor-173 .elementor-element-e9b803f .elementor-social-icon i,
+.elementor-173 .elementor-element-e9b803f .elementor-social-icon svg {
+    color: #FFFFFF !important;
+    fill: #FFFFFF !important;
+}
+
 
 /* ===== FOOTER: white-to-cream gradient, black copyright bar, blue icons ===== */
 .elementor-220 .elementor-element.elementor-element-84a8b2f{background:linear-gradient(180deg,#FFFFFF 0%,var(--dd-cream) 100%)!important;border-top:1px solid var(--dd-ink)}
@@ -75,3 +119,18 @@ html{scroll-behavior:smooth}
 .jkit-mailchimp-message.dd-sub-msg{margin-bottom:10px;padding:8px 12px;border-radius:8px;font-size:14px;text-align:center}
 .jkit-mailchimp-message.dd-sub-ok{background:#e6f7e9;color:#1d6b2c}
 .jkit-mailchimp-message.dd-sub-err{background:#fdecea;color:#a12b1c}
+
+/* ===== HEADER (desktop): keep all page names on ONE row + centre the email / phone line ===== */
+@media (min-width:1025px){
+  /* menu may use all the room beside the logo and the social icons */
+  .elementor-173 .elementor-element.elementor-element-2a13dc5{max-width:none!important;width:auto!important;flex:1 1 auto;min-width:0}
+  .elementor-173 .elementor-element-2a13dc5 .elementor-nav-menu--main .elementor-nav-menu{flex-wrap:nowrap;justify-content:center}
+  .elementor-173 .elementor-element-2a13dc5 .elementor-nav-menu--main .elementor-item{white-space:nowrap;font-size:clamp(12.5px,1.3vw,18px)!important;padding-left:clamp(3px,.65vw,16px);padding-right:clamp(3px,.65vw,16px)}
+  /* email + phone: centred on the page, above the menu */
+  .elementor-173 .elementor-element-4dd133a{position:relative}
+  .elementor-173 .elementor-element-3bc4074{position:static!important;padding-top:40px!important}
+  .elementor-173 .elementor-element-0ce186d{position:absolute;top:0;left:50%;transform:translateX(-50%);width:auto!important;max-width:none;z-index:3;background:transparent!important}
+  .elementor-173 .elementor-element-14ae788{width:max-content!important;max-width:none!important}
+  .elementor-173 .elementor-element-14ae788 .elementor-icon-list-items{justify-content:center;flex-wrap:nowrap;margin-inline:0!important}
+  .elementor-173 .elementor-element-14ae788 .elementor-icon-list-item,.elementor-173 .elementor-element-14ae788 .elementor-icon-list-text{white-space:nowrap}
+}
