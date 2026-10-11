@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&family=Roboto:wght@400;500;700&display=swap");
 /* Dream Destinations theme (from the reference site): cream header + footer, coral accents there;
    content uses blue headings (#6EC1E4) and green buttons (#61CE70), the logo blue/green. Fonts: Barlow + Roboto. */
-:root{--dd-coral:#F5735A;--dd-blue:#6EC1E4;--dd-green:#61CE70;--dd-ink:#2D3134;--dd-cream:#FBF0C9;--dd-cream-soft:#FFF2C4;
+:root{--dd-coral:#F5735A;--dd-blue:#6EC1E4;--dd-green:#61CE70;--dd-ink:#33383e;--dd-cream:#FBF0C9;--dd-cream-soft:#FFF2C4;
 --e-global-color-primary:#6EC1E4;--e-global-color-accent:#61CE70}
 html,body{overflow-x:hidden}
 .hfe-site-logo-img{width:auto!important;max-width:100%!important;height:auto!important;max-height:58px;object-fit:contain}
@@ -126,6 +126,9 @@ html{scroll-behavior:smooth}
   .elementor-173 .elementor-element.elementor-element-2a13dc5{max-width:none!important;width:auto!important;flex:1 1 auto;min-width:0}
   .elementor-173 .elementor-element-2a13dc5 .elementor-nav-menu--main .elementor-nav-menu{flex-wrap:nowrap;justify-content:center}
   .elementor-173 .elementor-element-2a13dc5 .elementor-nav-menu--main .elementor-item{white-space:nowrap;font-size:clamp(12.5px,1.3vw,18px)!important;padding-left:clamp(3px,.65vw,16px);padding-right:clamp(3px,.65vw,16px)}
+  /* page names: soft black like the rest of the header text, with a gap between them */
+  .elementor-173 .elementor-element-2a13dc5 .elementor-nav-menu--main .elementor-nav-menu{gap:clamp(0px,calc(1.7vw - 12px),14px)}
+  .elementor-173 .elementor-element.elementor-element-2a13dc5 .elementor-nav-menu--main .elementor-item:not(.elementor-item-active):not(:hover):not(:focus):not(.highlighted){color:var(--dd-ink);fill:var(--dd-ink)}
   /* email + phone: centred on the page, above the menu */
   .elementor-173 .elementor-element-4dd133a{position:relative}
   .elementor-173 .elementor-element-3bc4074{position:static!important;padding-top:40px!important}
